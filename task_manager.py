@@ -20,3 +20,9 @@ def add_task(description):
 
 if __name__ == "__main__":
     add_task("First task by Abdul Wasay")
+
+def delete_task(task_id):
+    tasks = load_tasks()
+    new_tasks = [t for t in tasks if t['id'] != task_id]
+    save_tasks(new_tasks)
+    print(f"Task {task_id} deleted successfully.")
